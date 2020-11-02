@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Slide App</title>
-  </head>
-  <body>
-    
-    <script src="index.js" charset="utf-8"></script>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .slide-container {
+      width: 900px;
+      background-color: black;
+      height: 500px;
+      position: relative;
+      border: 3px solid black;
+      perspective: 1000px;
+    }
+
+    .slide {
+      background-color: white;
+      width: 250px;
+      position: absolute;
+      top: 10%;
+      transform: translateY(-50%);
+      border: blue solid;
+      transition: all 0.5s;
+    }
+
+    .first {
+      background: red;
+    }
+
+    .second {
+      background: green;
+    }
+
+    #first {
+      left: 0;
+      height: 300px;
+      transform-style: preserve-3d;
+      transform: rotateY(-30deg);
+    }
+
+    #second {
+      left: 50%;
+      height: 400px;
+      transform: translateX(-50%);
+      z-index: 10;
+      top: 5%;
+    }
+
+    #third {
+      left: 650px;
+      height: 300px;
+      transform: rotateY(30deg);
+    }
+  </style>
+  <title>Slider App</title>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div class="first slide" id="first"></div>
+    <div class="second slide" id="second"></div>
+    <div class="third slide" id="third"></div>
+  </div>
+  <script src="index.js"></script>
+</body>
+
 </html>
